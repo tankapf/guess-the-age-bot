@@ -455,7 +455,7 @@ bot.command("chart", ctx => {
 	if (top.length > 0) {
 		ctx.replyWithMarkdown(
 			trueTrim(`
-			*🔝 Глобальный рейтинг игроков:*
+			*🔝 Qrupdaki Reyting:*
 
 			${topSlice
 				.map(
@@ -483,7 +483,7 @@ bot.command("chart", ctx => {
 					: ""
 			}
 			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @asoresmi.
-			🔄 /game - Еще разок?
+			🔄 /game - Bir Daha?
 		`)
 		)
 	} else {
