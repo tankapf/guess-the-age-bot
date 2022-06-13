@@ -173,7 +173,7 @@ const getRoundMessage = (chatId, round, time) => {
 
 	return trueTrim(`
 		*Раунд ${round + 1}/${config.rounds}*
-		Сколько, по-вашему, лет этому человеку?
+		Sizcə bu adamin neçə yaşı var?
 		${
 			answers.length > 0
 				? `\n${answers
