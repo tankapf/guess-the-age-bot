@@ -23,8 +23,8 @@ const getAddToGroupButton = botUsername => ({
 		inline_keyboard: [
 			[
 				{
-					text: "Добавить бота в группу 👥",
-					url: `https://t.me/${botUsername}?startgroup=add`,
+					text: "Botu Qrupa Əlavə Et 👥",
+					url: `https://t.me/ASOCguesGameBot?startgroup=add`,
 				},
 			],
 		],
@@ -32,18 +32,19 @@ const getAddToGroupButton = botUsername => ({
 })
 const getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
-	👋 Привет. Я — бот для игры в «угадай возраст» в групповых чатах.
+	👋 Salam. Mən Qruplar Üçün Yaranmış "Yaş Təxmin" Oyun Botuyam.
 
 	📋 Правила просты: я кидаю вам фото человека, а ваша задача быстро угадать его возраст. Просто отправьте предполагаемый возраст цифрами в чат и я учту ваш голос. Чем точнее вы отвечаете, тем меньше баллов теряете.
 	${isGroup ? "" : "\n😉 Для начала, добавь меня в *групповой чат* и вызови /game.\n"}
 	*Команды:*
-	/game - 🕹 Новая игра
-	/stop - 🛑 Остановить игру
-	/top - 🔝 Рейтинг игроков чата
-	/chart - 🌎 Глобальный рейтинг
-	/donate - 💸 Поддержать проект
+	/game - 🕹 Oyunu Başlat
+	/stop - 🛑 Oyunu Diyandır
+	/top - 🔝 Qrupunuzdaki Reyting
+	/chart - 🌎 Qlobal Reyting
+	/melumat - ⚡ Bizim,Kanal Qruplar.
 
-	Канал автора: @FilteredInternet ❤️ 
+	🧑🏻‍💻 Sahiblər: @Vusaliw, @Demon_nightT 🇦🇿
+🇦🇿 Rəsmi Qrup: @WerabliAnlar  
 `),
 	isGroup ? null : getAddToGroupButton(botUsername),
 ]
