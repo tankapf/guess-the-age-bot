@@ -49,7 +49,7 @@ const getGreetMessage = ({botUsername, isGroup}) => [
 	isGroup ? null : getAddToGroupButton(botUsername),
 ]
 const getOnlyGroupsMessage = botUsername => [
-	"❌ Эта команда доступна только для *групповых чатов*. Создайте чат с друзьями и добавьте туда бота.",
+	"❌ Bu əmr yalnız *qrup söhbətləri* üçün əlçatandır. Dostlarla söhbət yaradın və oraya bot əlavə edin.",
 	getAddToGroupButton(botUsername),
 ]
 const getRandomPerson = () => {
@@ -118,7 +118,7 @@ const stopGame = (ctx, chatId) => {
 		if (top.length > 0) {
 			ctx.replyWithMarkdown(
 				trueTrim(`
-					*🏁 А вот и победители:*
+					*🏁 Və budur qaliblər🏁*
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -135,22 +135,22 @@ const stopGame = (ctx, chatId) => {
 						)
 						.join("\n")}
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-					🔄 /game - Еще разок?
+					❤️ Bəzən yeni gözəl botların dərc olunduğu müəllif kanalı @asoresmi.
+					🔄 /game - Bir Daha?
 				`)
 			)
 		} else {
 			ctx.replyWithMarkdown(
 				trueTrim(`
-					*🏁 Ок, завершаю игру.*
+					*🏁 Yaxşı, oyunu bitirdim.*
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
-					🔄 /game - Еще разок?
+					❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @asoresmi.
+					🔄 /game - Bir Daha?
 				`)
 			)
 		}
 	} else {
-		ctx.reply("❌ Игра не была запущена. Вы можете запутить ее командой /start.")
+		ctx.reply("❌ Oyun işə salınmayıb. Onu əmrlə çaşdıra bilərsiniz /start.")
 	}
 }
 const getRoundMessage = (chatId, round, time) => {
@@ -247,7 +247,7 @@ const startGame = (ctx, chatId) => {
 			if (!top.every(member => member.answer === null)) {
 				ctx.replyWithMarkdown(
 					trueTrim(`
-						Человеку на этом фото *${rightAnswer} ${pluralize(
+						Bu fotodakı adamın neçə yaşə var? 🤔 *${rightAnswer} ${pluralize(
 						rightAnswer,
 						"год",
 						"года",
@@ -269,7 +269,7 @@ const startGame = (ctx, chatId) => {
 					}
 				)
 			} else {
-				ctx.reply("🤔 Похоже, вы не играете. Ок, завершаю игру...")
+				ctx.reply("🤔 Deyəsən oynamırsan. Yaxşı, mən oyunu bitirirəm....")
 				stopGame(ctx, chatId)
 				return
 			}
@@ -292,7 +292,7 @@ const startGame = (ctx, chatId) => {
 }
 
 bot.catch((err, ctx) => {
-	console.log("\x1b[41m%s\x1b[0m", `Ooops, encountered an error for ${ctx.updateType}`, err)
+	console.log("\x1b[41m%s\x1b[0m", `Üçün xəta ilə qarşılaşdıÜçün xəta ilə qarşılaşdı ${ctx.updateType}`, err)
 })
 
 bot.start(async ctx => {
@@ -313,7 +313,7 @@ bot.command("game", ctx => {
 		if (chat) {
 			if (chat.isPlaying) {
 				return ctx.reply(
-					"❌ У вас уже запущена игра. Вы можете ее остановить командой /stop."
+					"❌ Sizdə artıq oyun var. Komanda ilə dayandıra bilərsiniz /stop."
 				)
 			} else {
 				chat.isPlaying = true
@@ -348,12 +348,12 @@ bot.command("donate", ctx => {
 	console.log("donate")
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Проще всего задонатить здесь: babki.mishasaidov.com
+			Xoş Gəldiniz.⚡
 
-			ЮMoney (Яндекс.Деньги): \`4100117319944149\`
-			QIWI: \`+77002622563\`
-			BTC: \`1MDRDDBURiPEg93epMiryCdGvhEncyAbpy\`
-			Kaspi (Казахстан): \`5169497160435198\`
+			Rəsmi Kanal 🤍: @ASOResmi
+			Rəsmi UserBot ⚡: @ASOUserBott
+			Dəsdək Qurupu 📣: @ASOSup
+			Digər Botlar 🌐: @WerabSupport
 		`)
 	)
 })
@@ -381,7 +381,7 @@ bot.command("top", ctx => {
 			if (top.length > 0) {
 				ctx.replyWithMarkdown(
 					trueTrim(`
-					*🔝 Лучшие игроки этого чата за все время:*
+					*🔝 Bu söhbətdə bütün zamanların ən yaxşı oyunçuları:*
 
 					${top
 						.sort((a, b) => b.score - a.score)
@@ -398,15 +398,15 @@ bot.command("top", ctx => {
 						)
 						.join("\n")}
 
-					❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
+					 ❤️ Bəzən yeni gözəl botların dərc olunduğu müəllif kanalı @asoresmi.
 					🔄 /game - Еще разок?
 				`)
 				)
 			} else {
-				ctx.reply("❌ Вы еще не сыграли ни одной игры в этом чате.")
+				ctx.reply("❌ Bu çatda hələ heç bir oyun oynamamısınız.")
 			}
 		} else {
-			ctx.reply("❌ Вы еще не сыграли ни одной игры в этом чате.")
+			ctx.reply("❌ Bu çatda hələ heç bir oyun oynamamısınız.")
 		}
 	} else {
 		ctx.replyWithMarkdown(...getOnlyGroupsMessage(ctx.botInfo.username))
@@ -482,12 +482,12 @@ bot.command("chart", ctx => {
 					  )}\n`
 					: ""
 			}
-			❤️ Канал автора, где иногда публикуются новые прикольные боты @FilteredInternet.
+			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @asoresmi.
 			🔄 /game - Еще разок?
 		`)
 		)
 	} else {
-		ctx.reply("❌ На данный момент невозможно составить рейтинг.")
+		ctx.reply("❌ Hazırda sıralamaq mümkün deyil.")
 	}
 })
 
@@ -507,7 +507,7 @@ bot.on("message", async ctx => {
 			let firstName = message.from.first_name
 			let answer = Number(message.text)
 			if (answer <= 0 || answer > 120) {
-				return ctx.reply("Ответ вне допустимого диапазона (1 - 120)", {
+				return ctx.reply("Yaş Limitini Keçdiz (1 - 120)", {
 					reply_to_message_id: ctx.message.message_id,
 				})
 			}
