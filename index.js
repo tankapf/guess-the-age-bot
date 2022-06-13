@@ -34,8 +34,8 @@ const getGreetMessage = ({botUsername, isGroup}) => [
 	trueTrim(`
 	👋 Salam. Mən Qruplar Üçün Yaranmış "Yaş Təxmin" Oyun Botuyam.
 
-	📋 Правила просты: я кидаю вам фото человека, а ваша задача быстро угадать его возраст. Просто отправьте предполагаемый возраст цифрами в чат и я учту ваш голос. Чем точнее вы отвечаете, тем меньше баллов теряете.
-	${isGroup ? "" : "\n😉 Для начала, добавь меня в *групповой чат* и вызови /game.\n"}
+	📋 Qaydalar sadədir: Mən sizə bir insanın şəklini atıram və sizin vəzifəniz onun yaşını təxmin etməkdir. Nə qədər dəqiq cavab versəniz, bir o qədər az xal qazanırsınız.⭐.
+	${isGroup ? "" : "\n😉 Oyuna İndicə, Başla. *групповой чат* и вызови /game.\n"}
 	*Команды:*
 	/game - 🕹 Oyunu Başlat
 	/stop - 🛑 Oyunu Diyandır
