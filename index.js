@@ -35,7 +35,7 @@ const getGreetMessage = ({botUsername, isGroup}) => [
 	👋 Salam. Mən Qruplar Üçün Yaranmış "Yaş Təxmin" Oyun Botuyam.
 
 	📋 Qaydalar sadədir: Mən sizə bir insanın şəklini atıram və sizin vəzifəniz onun yaşını təxmin etməkdir. Nə qədər dəqiq cavab versəniz, bir o qədər az xal qazanırsınız.⭐.
-	${isGroup ? "" : "\n😉 Oyuna İndicə, Başla. *групповой чат* и вызови /game.\n"}
+	${isGroup ? "" : "\n😉 Əvvəlcə məni söhbətə əlavə edin və Adminlik Hüquqlarımı verin  /game.\n"}
 	*Команды:*
 	/game - 🕹 Oyunu Başlat
 	/stop - 🛑 Oyunu Diyandır
